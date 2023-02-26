@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\OrderCreateController;
+use App\Http\Controllers\OrderStoreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/orders/create', OrderCreateController::class);
+Route::post('/orders', OrderStoreController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
