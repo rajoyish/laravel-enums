@@ -21,6 +21,9 @@
                                     <option value="{{ $status }}">{{ $status->label() }}</option>
                                 @endforeach
                             </select>
+                            @error('status')
+                                <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <x-primary-button>{{ __('Create') }}</x-primary-button>
