@@ -23,11 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/orders/create', OrderCreateController::class);
+Route::get('/orders/create', OrderCreateController::class)->name('create-orders');
 Route::post('/orders', OrderStoreController::class);
-Route::get('/orders/{order}/edit', OrderEditController::class);
+Route::get('/orders/{order}/edit', OrderEditController::class)->name('edit-order');
 Route::patch('/orders/{order}', OrderUpdateController::class);
-Route::get('/orders', OrderIndexController::class);
+Route::get('/orders', OrderIndexController::class)->name('orders');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

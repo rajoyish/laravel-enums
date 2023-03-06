@@ -20,6 +20,6 @@ class OrderStoreController extends Controller
 
         Order::create($request->only('status'));
 
-        return back();
+        return to_route('orders');
     }
 }

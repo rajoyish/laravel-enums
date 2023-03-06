@@ -20,6 +20,6 @@ class OrderUpdateController extends Controller
 
         $order->update($request->only('status'));
 
-        return back();
+        return to_route('orders');
     }
 }

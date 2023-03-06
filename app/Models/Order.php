@@ -13,10 +13,14 @@ class Order extends Model
 
     protected $fillable = ['status'];
 
-    protected function status(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => OrderStatus::tryFrom($value)
-        );
-    }
+    // protected function status(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn ($value) => OrderStatus::tryFrom($value)
+    //     );
+    // }
+
+    protected $casts = [
+        'status' => OrderStatus::class,
+    ];
 }
