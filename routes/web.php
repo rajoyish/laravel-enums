@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OrderCreateController;
 use App\Http\Controllers\OrderEditController;
+use App\Http\Controllers\OrderIndexController;
 use App\Http\Controllers\OrderStoreController;
 use App\Http\Controllers\OrderUpdateController;
 use App\Http\Controllers\ProfileController;
@@ -26,6 +27,7 @@ Route::get('/orders/create', OrderCreateController::class);
 Route::post('/orders', OrderStoreController::class);
 Route::get('/orders/{order}/edit', OrderEditController::class);
 Route::patch('/orders/{order}', OrderUpdateController::class);
+Route::get('/orders', OrderIndexController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

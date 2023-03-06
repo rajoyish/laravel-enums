@@ -8,12 +8,17 @@ enum OrderStatus: String
     case SHIPPED = 'shipped';
     case CANCELLED = 'cancelled';
 
+    // public function label(): String
+    // {
+    //     return match ($this) {
+    //         self::PLACED => 'Placed',
+    //         self::SHIPPED => 'Shipped',
+    //         self::CANCELLED => 'Cancelled',
+    //     };
+    // }
+
     public function label(): string
     {
-        return match ($this) {
-            self::PLACED => 'Placed',
-            self::SHIPPED => 'Shipped',
-            self::CANCELLED => 'Cancelled',
-        };
+        return ucfirst($this->value);
     }
 }
